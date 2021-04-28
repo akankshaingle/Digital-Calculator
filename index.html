@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--     <title>Digital Calculator</title> -->
+	
+    <title>Digital Calculator</title>
+    <meta name="title" content="Digital Calculator" />
+    <meta
+      name="description"
+      content="It is digital calculator created in Html , Css and javaScript to perform any arithmatic operations."/>
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="It is digital calculator created in Html , Css and javaScript to perform any arithmatic operations."
+    />
+    <meta property="og:title" content="Digital Calculator" />
+    <meta
+      property="og:image"
+      content="https://drive.google.com/file/d/1ZFHisHuQWpQI-om_GXFaMXSVz_EIVIOq/view?usp=sharing"
+    />
+    <meta property="og:url" content="https://drive.google.com/file/d/1ZFHisHuQWpQI-om_GXFaMXSVz_EIVIOq/view?usp=sharing" />
+
+    <meta property="twitter:card" content="Digital Calculator" />
+    <meta
+      property="twitter:url"
+      content="https://drive.google.com/file/d/1ZFHisHuQWpQI-om_GXFaMXSVz_EIVIOq/view?usp=sharing"
+    />
+    <meta
+      property="twitter:description"
+      content="It is digital calculator created in Html , Css and javaScript to perform any arithmatic operations."
+    />
+    <meta property="twitter:title" content="Digital Calculator" />
+    <meta
+      property="twitter:image"
+      content="https://drive.google.com/file/d/1ZFHisHuQWpQI-om_GXFaMXSVz_EIVIOq/view?usp=sharing"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    
+    <script>
+    function insert(num){
+        document.form.textview.value=document.form.textview.value+num;
+    }
+    function equal(){
+    var exp = document.form.textview.value;
+    if(exp){
+      document.form.textview.value=eval(exp);
+      }
+    }
+    function c(){
+    document.form.textview.value="";
+    }
+    function back(){
+    var exp= document.form.textview.value;
+    document.form.textview.value=exp.substring(0,exp.length-1);
+    }
+    </script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .button{
+            border-radius:5px;
+            border-color:black;
+            width:60px;
+            height:60px;
+            font-size:22px;
+            margin:3px;
+            cursor:pointer;
+            
+        }
+        .button:hover{
+         border-radius:25px;
+        #background:#e8685f;
+        #background:#e88f89;
+        #background:#df63f2;
+        background:#e98df7;
+        background:#eaa6f5;
+        opacity:0.9px;
+        color:white;
+        }
+        .textview{
+        border-radius:5px;
+            width:254.55px;
+            margin:5px;
+            font-size:20.55px;
+            padding:10px;
+        }
+	.main{
+	position:absolute;
+	top:50%;
+	left:50%;
+	
+	padding:18px;
+	border-radius:15px;
+	transform:translateX(-50%) translateY(-50%);
+	background-color:
+#8b5499
+;
+	}
+	
+	.bg{
+	position:absolute;
+	background-color : pink;
+	width:100%;
+	height:100%;
+	}
+  </style>
+</head>
+<body>
+<div class="bg" style="	background:linear-gradient(to right, #e91e63, #3f51b5);">
+<div class="main" style="background-color:#eee;" >
+    <form name="form">
+        <input class="textview" name="textview">
+    </form>
+    <table>
+        <tr>
+            <td><input class="button" type="button" value="C" onclick="c()" ></td>
+            <td><input class="button" type="button" value="<" onclick="back()"></td>
+            <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+            <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
+        </tr>
+         <tr>
+            <td><input class="button"  type="button" value="7" onclick="insert(7)"></td>
+            <td><input class="button"  type="button" value="8" onclick="insert(8)"></td>
+            <td><input class="button"  type="button" value="9" onclick="insert(9)"></td>
+            <td><input class="button"  type="button" value="-" onclick="insert('-')"></td>
+        </tr>
+         <tr>
+            <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+            <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+            <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+            <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+        </tr>
+         <tr>
+            <td><input class="button"  type="button" value="1" onclick="insert(1)"></td>
+            <td><input class="button"  type="button" value="2" onclick="insert(2)"></td>
+            <td><input class="button"  type="button" value="3" onclick="insert(3)"></td>
+            <td rowspan=5><input class="button" style="height:125px" type="button" value="=" onclick="equal()"></td>
+        </tr>
+         <tr>
+            <td colspan=2><input class="button" style="width:125px" type="button" value="0" onclick="insert(0)"></td>
+            <td><input class="button"  type="button" value="." onclick="insert('.')"></td>
+        </tr>
+    </table>
+</div>
+</div>
+</body>
+</html>
